@@ -1,0 +1,8 @@
+{
+    "Register":"登録する",
+    "Name": "名前",
+    "Email": "Eメール",
+    "Password": "パスワード",
+    "Confirm Password": "確認済みのパスワード",
+    "Already registered?": "もう登録しましたか？"
+}

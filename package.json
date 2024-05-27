@@ -24,6 +24,8 @@
         "vue": "^3.4.27"
     },
     "dependencies": {
+        "flowbite": "^2.3.0",
+        "flowbite-vue": "^0.1.4",
         "vue-router": "^4.3.0"
     }
 }

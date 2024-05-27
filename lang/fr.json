@@ -1,0 +1,8 @@
+{
+    "Register":"S'inscrire",
+    "Name": "Nom",
+    "Email": "Email",
+    "Password": "Mot de passe",
+    "Confirm Password": "Confirmé le mot de passe",
+    "Already registered?": "Êtes-vous déjà inscrire?"
+}

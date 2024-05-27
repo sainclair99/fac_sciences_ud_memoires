@@ -10,6 +10,8 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
+        'node_modules/flowbite-vue/**/*.{js,jsx,ts,tsx,vue}',
+        'node_modules/flowbite/**/*.{js,jsx,ts,tsx}'
     ],
     darkMode: 'selector',
     theme: {
@@ -23,5 +25,8 @@ export default {
         },
     },
 
-    plugins: [forms],
+    plugins: [
+        forms,
+        require('flowbite/plugin')
+    ],
 };

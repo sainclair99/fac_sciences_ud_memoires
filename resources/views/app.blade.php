@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Fac Sciences Thesis</title>
+        <title>@yield('title') | Fac Sciences Thesis</title>
         <link rel="shortcut icon" href="{{ asset('logo.png') }}">
         @vite([
             'resources/css/app.css',
@@ -13,7 +13,7 @@
     </head>
     <body>
         <div id="app">
-            <header class="sticky top-0 bg-white/65 dark:bg-black/65">
+            {{-- <header class="sticky top-0 bg-white/65 dark:bg-black/65">
                 <div class="w-full h-20 bg-white/65 shadow-lg px-2 flex items-center justify-around dark:bg-black/65">
                     <logo-text logo_text_white="{{ asset('logo_text_blanc.png') }}" logo_text_black="{{ asset('logo_text.png') }}" class="w-44 h-auto" dark={{false}}></logo-text>
                     
@@ -39,7 +39,7 @@
                             </x-responsive-nav-link>
                         </form>
                     @else
-                        <a href="{{ url('/login') }}" class="border border-black dark:border-white p-2 font-bold dark:text-white hover:shadow-md">{{ __('auth.login') }}</a>
+                        <a href="{{ url('/login') }}" class="border border-black dark:border-white p-2 font-bold dark:text-white hover:shadow-md">{{ __('auth.login.login') }}</a>
                         <a href="{{ url('/register') }}" class="border bg-black border-black p-2 font-bold text-white dark:text-black dark:bg-white dark:border-white dark:hover:bg-gray-200 hover:shadow-md">{{ __('auth.signup') }}</a>
                     @endif
                     @if (app()->getLocale() == 'en')
@@ -48,7 +48,8 @@
                         <language-change en_label='(En) Anglais' fr_label='(Fr) Français' code='fr'></language-change>
                     @endif
                 </div>
-            </header>
+            </header> --}}
+            @include('partials.header')
 
             <main class="w-full flex flex-col items-center justify-center">
                 {{-- <div class="bg-blue-700/40 w-1/2 h-auto p-4 rounded-md shadow-2xl">
@@ -64,14 +65,15 @@
                         <button type="submit">Envoyer</button>
                     </form>
                 </div> --}}
-                <div class="w-full h-screen">
+                {{-- <div class="w-full h-screen">
                     <img src="{{ asset('assets/home_pic/fac1.jpg') }}" alt="" srcset="" class="w-full h-screen">
-                </div>
+                </div> --}}
+                @yield('content')
             </main>
 
-            <footer class="py-16 text-center text-sm text-green-400 dark:text-white/70">
+            {{-- <footer class="py-16 text-center text-sm text-green-400 dark:text-white/70">
                 Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-            </footer>
+            </footer> --}}
         </div>
     </body>
 </html>
