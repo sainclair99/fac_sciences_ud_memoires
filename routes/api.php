@@ -18,6 +18,8 @@ Route::get('/test', function (Request $request) {
     ]);
 });
 
+Route::get("/me", [AuthController::class,'getUser']);
+
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
