@@ -10,8 +10,13 @@ class MemoireController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
+        if ($request['search']) {
+            $memoires = Memoire::where('theme', 'like', '%'.$request['search'].'%')->get();
+            $search = $request['search'];
+            return view('memoire.index', compact(['memoires', 'search']));
+        }
         $memoires = Memoire::all();
         return view('memoire.index',compact('memoires'));
     }

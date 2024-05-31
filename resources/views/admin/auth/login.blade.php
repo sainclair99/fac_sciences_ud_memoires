@@ -14,7 +14,7 @@
 </head>
 <body>
     <div id="app" class="w-full h-screen flex justify-center items-center bg-[asset('logo.png')]">
-        <admin-login></admin-login>
+        <admin-login app_logo="{{ asset('logo.png') }}"></admin-login>
     </div>
 </body>
 </html>
