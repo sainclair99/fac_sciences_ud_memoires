@@ -13,7 +13,7 @@
                 <div class="hover:bg-blue-100 w-full text-xl font-semibold font-mono text-start mb-2 flex gap-2 items-center">
                     <img src="{{ asset('assets/svg/mircobiologist.svg') }}" alt="" srcset="" class="w-8 h-8">
                     <span>
-                        Biologie
+                        Biologie animale
                     </span>
                 </div>
             </a>
@@ -49,6 +49,32 @@
                     </span>
                 </div>
             </a>
+            {{-- todo --}}
+            <a href="" class="">
+                <div class="hover:bg-blue-100 w-full text-xl font-semibold font-mono text-start mb-2 flex gap-2 items-center">
+                    <img src="{{ asset('assets/svg/computer.svg') }}" alt="" srcset="" class="w-8 h-8">
+                    <span>
+                        biologie vegetale
+                    </span>
+                </div>
+            </a>
+            <a href="" class="">
+                <div class="hover:bg-blue-100 w-full text-xl font-semibold font-mono text-start mb-2 flex gap-2 items-center">
+                    <img src="{{ asset('assets/svg/computer.svg') }}" alt="" srcset="" class="w-8 h-8">
+                    <span>
+                       Biochimie
+                    </span>
+                </div>
+            </a>
+            <a href="" class="">
+                <div class="hover:bg-blue-100 w-full text-xl font-semibold font-mono text-start mb-2 flex gap-2 items-center">
+                    <img src="{{ asset('assets/svg/computer.svg') }}" alt="" srcset="" class="w-8 h-8">
+                    <span class="text-center">
+                        Science de la terre
+                    </span>
+                </div>
+            </a>
+            {{-- todo --}}
             {{-- <a href="" class="">
                 <div class="hover:bg-blue-100 w-full text-xl font-semibold font-mono text-start mb-2 flex gap-2 items-center">
                     <img src="{{ asset('assets/svg/physics.svg') }}" alt="" srcset="" class="w-8 h-8">
