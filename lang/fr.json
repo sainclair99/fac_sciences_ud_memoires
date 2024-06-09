@@ -4,5 +4,17 @@
     "Email": "Email",
     "Password": "Mot de passe",
     "Confirm Password": "Confirmé le mot de passe",
-    "Already registered?": "Êtes-vous déjà inscrire?"
+    "Already registered?": "Êtes-vous déjà inscrire?",
+
+    "filter options":"options de filtre",
+    "animal biology":"biologie animale",
+    "chemistry":"chimie",
+    "computer science":"informatique",
+    "mathematics":"mathématique",
+    "physics":"physique",
+    "plant's biology":"biologie végétale",
+    "biochemistry":"biochimie",
+    "earth science":"science de la terre",
+    "open":"ouvrir",
+    "download":"télécharger"
 }

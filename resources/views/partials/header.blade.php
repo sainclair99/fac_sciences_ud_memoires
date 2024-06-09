@@ -1,6 +1,8 @@
 <header class="sticky top-0 bg-white/65 dark:bg-black/65 z-50">
     <div class="w-full h-20 bg-white/65 shadow-lg px-2 flex items-center justify-around dark:bg-black/65">
-        <logo-text logo_text_white="{{ asset('logo_text_blanc.png') }}" logo_text_black="{{ asset('logo_text.png') }}" class="w-44 h-auto" dark={{false}}></logo-text>
+        <a href="/">
+            <logo-text logo_text_white="{{ asset('logo_text_blanc.png') }}" logo_text_black="{{ asset('logo_text.png') }}" class="w-44 h-auto" dark={{false}}></logo-text>
+        </a>
         
         <div class="flex items-star w-1/2 rounded-full bg-gray-100 border border-gray-500 dark:bg-gray-600/45">
             <form action="{{route('web.memoire.index')}}" method="get" class="w-full flex items-center justify-center px-2 h-12 border-none">
@@ -28,8 +30,8 @@
                 </x-responsive-nav-link>
             </form>
         @else
-            <a href="{{ url("en/login") }}" class="border border-black dark:border-white p-2 font-bold dark:text-white hover:shadow-md">{{ __('auth.login.login') }}</a>
-            <a href="{{ url('en/register') }}" class="border bg-black border-black p-2 font-bold text-white dark:text-black dark:bg-white dark:border-white dark:hover:bg-gray-200 hover:shadow-md">{{ __('auth.signup') }}</a>
+            <a href="{{ url("login") }}" class="border border-black dark:border-white p-2 font-bold dark:text-white hover:shadow-md">{{ __('auth.login.login') }}</a>
+            <a href="{{ url('register') }}" class="border bg-black border-black p-2 font-bold text-white dark:text-black dark:bg-white dark:border-white dark:hover:bg-gray-200 hover:shadow-md">{{ __('auth.signup') }}</a>
         @endif
         @if (app()->getLocale() == 'en')
             <language-change en_label='(En) English' fr_label='(Fr) French' code='en'></language-change>

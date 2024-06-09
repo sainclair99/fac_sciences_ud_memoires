@@ -21,6 +21,17 @@ class MemoireController extends Controller
         return view('memoire.index',compact('memoires'));
     }
 
+    public function download(Memoire $file)
+    {
+        $filePath = public_path("public/assets/{$file->file}");
+
+        if (file_exists($filePath)) {
+            response()->download($filePath, $file->original_name);
+            return redirect()->back();
+        } else {
+            abort(404, 'File not found');
+        }
+    }
     /**
      * Show the form for creating a new resource.
      */
