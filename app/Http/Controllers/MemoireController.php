@@ -73,9 +73,11 @@ class MemoireController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Memoire $memoire)
+    public function show($id)
     {
-        //
+        $memoire = Memoire::find($id);
+
+        return view('memoire.memoire', ['memoire' => $memoire]);
     }
 
     /**

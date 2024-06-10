@@ -95,8 +95,11 @@
                         <span class="text-semibold text-xl font-mono">{{ $memoire->theme }}</span>
                     </div>
                     <div class="flex gap-2 justify-end">
-                        <button class="text-white py-2 px-4 bg-blue-500 rounded-md shadow-md hover:bg-blue-700 text-semibold text-xl capitalize">{{__("open")}}</button>
-                        <a href="{{route('web.memoire.download',[$memoire->file])}}">
+                        <a href="{{__('/memoire/'.$memoire->id)}}">
+                            <button class="text-white py-2 px-4 bg-blue-500 rounded-md shadow-md hover:bg-blue-700 text-semibold text-xl capitalize">{{__("open")}}</button>
+                        </a>
+                        {{-- <a href="{{route('web.memoire.download',[$memoire->file])}}"> --}}
+                        <a href="{{url('assets/'.$memoire->file)}}">
                             <button class="text-white py-2 px-4 bg-green-500 rounded-md shadow-md hover:bg-green-700 text-semibold text-xl capitalize">{{__("download")}}</button>
                         </a>
                     </div>
