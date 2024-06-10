@@ -10,6 +10,7 @@
             'resources/sass/app.scss',
             'resources/js/app.js'
         ])
+        @yield('style')
     </head>
     <body>
         <div id="app">
@@ -75,5 +76,6 @@
                 Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
             </footer> --}}
         </div>
+        @yield('script')
     </body>
 </html>

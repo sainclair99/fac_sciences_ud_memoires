@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Etudiant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EtudiantController extends Controller
 {
@@ -28,7 +29,26 @@ class EtudiantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom' => ['required','string','max:255'],
+            'prenom' => ['required','string','max:255'],
+            'matricule' => ['required','string','max:255'],
+            'filiere' => ['required'],
+        ]);
+        
+        $data = new Etudiant();
+        $file = $request->file_upload;
+        $filename = time().'-'.$file->getClientOriginalName();
+        $file->move('assets', $filename);
+        $data->image_url = $filename;
+        $data->nom = $request->nom;
+        $data->prenom = $request->prenom;
+        $data->matricule = $request->matricule;
+        $data->user_id = Auth::user()->id;
+        $data->filiere_id = $request->filiere;
+        $data->save();
+        $etudiant = Etudiant::where('user_id', Auth::user()->id)->get();
+        return view('dashboard', compact(['etudiant' => $etudiant]));
     }
 
     /**

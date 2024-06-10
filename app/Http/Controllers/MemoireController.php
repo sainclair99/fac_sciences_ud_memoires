@@ -21,14 +21,16 @@ class MemoireController extends Controller
         return view('memoire.index',compact('memoires'));
     }
 
-    public function download(Memoire $file)
+    public function download($file)
     {
-        $filePath = public_path("public/assets/{$file->file}");
+        dd($file);
+        $filePath = public_path("public/assets/".$file);
 
         if (file_exists($filePath)) {
-            response()->download($filePath, $file->original_name);
-            return redirect()->back();
+            dd($filePath);
+            return response()->download($filePath);
         } else {
+            dd('failed');
             abort(404, 'File not found');
         }
     }
@@ -45,7 +47,27 @@ class MemoireController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $memoire = $request->validate([
+            'theme' => 'required|string',
+            'file' => 'required',
+            'first_page_image' => 'required'
+        ]);
+
+        $file = $request->file;
+        $filename = time().'-'.$file->getClientOriginalName();
+        $file->move('assets', $filename);
+
+        $file2 = $request->first_page_image;
+        $filename2 = time().'-'.$file2->getClientOriginalName();
+        $file2->move('assets', $filename2);
+
+        $memoire['file'] = $filename;
+        $memoire['first_page_image'] = $filename2;
+        $memoire['theme'] = $request->theme;
+
+        $memoire = Memoire::create($memoire);
+
+        return redirect()->route('web.memoire.index');
     }
 
     /**

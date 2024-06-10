@@ -19,7 +19,7 @@
             <li><a href="" class="dark:text-white hover:text-blue-700 font-semibold">{{ __('auth.supervisors') }}</a></li>
         </ul>
         @if (Auth::user())
-            <p class="dark:text-white hover:text-blue-700 font-semibold">{{Auth::user()->name}}</p>
+            <a href="/dashboard" class="dark:text-white hover:text-blue-700 font-semibold">{{Auth::user()->name}}</a>
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
 
